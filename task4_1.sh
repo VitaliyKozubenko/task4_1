@@ -1,7 +1,7 @@
 #!bin/bash
 m="$( cd "$( dirname "$0" )" && pwd )"
 
-echo "--- Hardware ---" > $m/ task4_1.out
+echo "--- Hardware ---" > $m/task4_1.out
 CPU=`cat /proc/cpuinfo | grep "model name"|sed 's/model name	:/ /' | uniq `
 echo "CPU: $CPU" >> $m/task4_1.out
 RAM=`cat /proc/meminfo | grep "MemTotal" | sed 's/MemTotal:       / /'`
