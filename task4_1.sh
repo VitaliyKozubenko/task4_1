@@ -20,7 +20,7 @@ PRETTYNAME=` lsb_release -d | awk '{print $2 ,$3 ,$4}'`
 echo "OS Description: $PRETTYNAME" >>$m/task4_1.out
 Kernelversion=` uname -r `
 echo "Kernel version: $Kernelversion">> $m/task4_1.out
-Installationdate=`ls -ld /var/log/installer |awk '{print $6,$7,$8}'`
+Installationdate=`tune2fs -l /dev/sda1 | grep created |awk '{print $3,$4,$5,$6,$7}'`
 echo "Installation date: $Installationdate">> $m/task4_1.out
 Hostname=`hostname `
 echo "Hostname: $Hostname">> $m/task4_1.out
